@@ -1,0 +1,51 @@
+[2017-05-04 18:12:25.542] [jointLog] [info] parsing read library format
+[2017-05-04 18:12:25.542] [jointLog] [info] There is 1 library.
+[2017-05-04 18:12:25.642] [jointLog] [info] Loading Quasi index
+[2017-05-04 18:12:25.645] [jointLog] [info] Loading 32-bit quasi index
+[2017-05-04 18:12:39.150] [jointLog] [info] done
+[2017-05-04 18:12:39.150] [jointLog] [info] Index contained 143335 targets
+[2017-05-04 18:16:25.270] [jointLog] [info] Computed 210282 rich equivalence classes for further processing
+[2017-05-04 18:16:25.270] [jointLog] [info] Counted 19661046 total reads in the equivalence classes 
+[2017-05-04 18:16:25.334] [jointLog] [info] Mapping rate = 44.4987%
+
+[2017-05-04 18:16:25.334] [jointLog] [info] finished quantifyLibrary()
+[2017-05-04 18:16:25.271] [fileLog] [info] 
+At end of round 0
+==================
+Observed 44183391 total fragments (44183391 in most recent round)
+
+[2017-05-04 18:16:25.480] [jointLog] [info] Starting optimizer
+[2017-05-04 18:16:25.663] [jointLog] [info] Marked 0 weighted equivalence classes as degenerate
+[2017-05-04 18:16:25.678] [jointLog] [info] iteration = 0 | max rel diff. = 85.4107
+[2017-05-04 18:16:25.827] [jointLog] [info] iteration 11, adjusting effective lengths to account for biases
+[2017-05-04 18:16:28.370] [jointLog] [info] Computed expected counts (for bias correction)
+[2017-05-04 18:16:28.371] [jointLog] [info] processed bias for 0.0% of the transcripts
+[2017-05-04 18:16:32.403] [jointLog] [info] processed bias for 10.0% of the transcripts
+[2017-05-04 18:16:36.382] [jointLog] [info] processed bias for 20.0% of the transcripts
+[2017-05-04 18:16:40.745] [jointLog] [info] processed bias for 30.0% of the transcripts
+[2017-05-04 18:16:44.954] [jointLog] [info] processed bias for 40.0% of the transcripts
+[2017-05-04 18:16:49.034] [jointLog] [info] processed bias for 50.0% of the transcripts
+[2017-05-04 18:16:53.117] [jointLog] [info] processed bias for 60.0% of the transcripts
+[2017-05-04 18:16:56.983] [jointLog] [info] processed bias for 70.0% of the transcripts
+[2017-05-04 18:17:01.296] [jointLog] [info] processed bias for 100.0% of the transcripts
+[2017-05-04 18:17:02.656] [jointLog] [info] iteration = 100 | max rel diff. = 0.229569
+[2017-05-04 18:17:04.147] [jointLog] [info] iteration = 200 | max rel diff. = 0.0936547
+[2017-05-04 18:17:05.642] [jointLog] [info] iteration = 300 | max rel diff. = 0.256367
+[2017-05-04 18:17:07.143] [jointLog] [info] iteration = 400 | max rel diff. = 0.0763989
+[2017-05-04 18:17:08.654] [jointLog] [info] iteration = 500 | max rel diff. = 0.0424586
+[2017-05-04 18:17:10.170] [jointLog] [info] iteration = 600 | max rel diff. = 0.0401952
+[2017-05-04 18:17:11.688] [jointLog] [info] iteration = 700 | max rel diff. = 0.0168753
+[2017-05-04 18:17:13.207] [jointLog] [info] iteration = 800 | max rel diff. = 0.0145459
+[2017-05-04 18:17:14.726] [jointLog] [info] iteration = 900 | max rel diff. = 0.0286569
+[2017-05-04 18:17:16.245] [jointLog] [info] iteration = 1000 | max rel diff. = 0.0257639
+[2017-05-04 18:17:17.765] [jointLog] [info] iteration = 1100 | max rel diff. = 0.0204975
+[2017-05-04 18:17:19.286] [jointLog] [info] iteration = 1200 | max rel diff. = 0.0289992
+[2017-05-04 18:17:20.811] [jointLog] [info] iteration = 1300 | max rel diff. = 0.0296585
+[2017-05-04 18:17:21.986] [jointLog] [info] iteration = 1378 | max rel diff. = 0.00890717
+[2017-05-04 18:17:22.001] [jointLog] [info] Finished optimizer
+[2017-05-04 18:17:22.001] [jointLog] [info] writing output 
+
+[2017-05-04 18:17:22.530] [jointLog] [warning] NOTE: Read Lib [( /seqdata/sandelin/projects/SKINCANCER/RNAseq/RNAPipe/00_seqdata/Sample_RNAseq_WTTPA_01mar//Sample_RNAseq_WTTPA_01mar_R1.fastq, /seqdata/sandelin/projects/SKINCANCER/RNAseq/RNAPipe/00_seqdata/Sample_RNAseq_WTTPA_01mar//Sample_RNAseq_WTTPA_01mar_R2.fastq )] :
+
+Greater than 5% of the fragments disagreed with the provided library type; check the file: Sample_RNAseq_WTTPA_01mar/lib_format_counts.json for details
+

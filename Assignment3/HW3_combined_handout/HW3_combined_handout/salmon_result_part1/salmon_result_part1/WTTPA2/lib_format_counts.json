@@ -1,0 +1,21 @@
+{
+    "read_files": "( /seqdata/sandelin/projects/SKINCANCER/RNAseq/RNAPipe/00_seqdata/Sample_RNAseq_WTTPA_02dec//RNAseq_WTTPA_02dec_TTCAGC_L005_R1.fastq, /seqdata/sandelin/projects/SKINCANCER/RNAseq/RNAPipe/00_seqdata/Sample_RNAseq_WTTPA_02dec//RNAseq_WTTPA_02dec_TTCAGC_L005_R2.fastq )",
+    "expected_format": "ISF",
+    "compatible_fragment_ratio": 0.5814185567528259,
+    "num_compatible_fragments": 13516750,
+    "num_assigned_fragments": 23247882,
+    "num_consistent_mappings": 52977081,
+    "num_inconsistent_mappings": 23882107,
+    "MSF": 0,
+    "OSF": 40393,
+    "ISF": 52977081,
+    "MSR": 0,
+    "OSR": 12471,
+    "ISR": 6199299,
+    "SF": 15126884,
+    "SR": 2501310,
+    "MU": 0,
+    "OU": 0,
+    "IU": 0,
+    "U": 0
+}

@@ -1,0 +1,52 @@
+[2017-05-04 17:17:20.083] [jointLog] [info] parsing read library format
+[2017-05-04 17:17:20.083] [jointLog] [info] There is 1 library.
+[2017-05-04 17:17:20.182] [jointLog] [info] Loading Quasi index
+[2017-05-04 17:17:20.183] [jointLog] [info] Loading 32-bit quasi index
+[2017-05-04 17:17:34.162] [jointLog] [info] done
+[2017-05-04 17:17:34.162] [jointLog] [info] Index contained 143335 targets
+[2017-05-04 17:22:17.697] [jointLog] [info] Computed 216884 rich equivalence classes for further processing
+[2017-05-04 17:22:17.697] [jointLog] [info] Counted 17074060 total reads in the equivalence classes 
+[2017-05-04 17:22:17.752] [jointLog] [info] Mapping rate = 36.5102%
+
+[2017-05-04 17:22:17.752] [jointLog] [info] finished quantifyLibrary()
+[2017-05-04 17:22:17.698] [fileLog] [info] 
+At end of round 0
+==================
+Observed 46765143 total fragments (46765143 in most recent round)
+
+[2017-05-04 17:22:17.880] [jointLog] [info] Starting optimizer
+[2017-05-04 17:22:18.094] [jointLog] [info] Marked 0 weighted equivalence classes as degenerate
+[2017-05-04 17:22:18.108] [jointLog] [info] iteration = 0 | max rel diff. = 84.9538
+[2017-05-04 17:22:18.249] [jointLog] [info] iteration 11, adjusting effective lengths to account for biases
+[2017-05-04 17:22:20.812] [jointLog] [info] Computed expected counts (for bias correction)
+[2017-05-04 17:22:20.812] [jointLog] [info] processed bias for 0.0% of the transcripts
+[2017-05-04 17:22:24.614] [jointLog] [info] processed bias for 10.0% of the transcripts
+[2017-05-04 17:22:28.333] [jointLog] [info] processed bias for 20.0% of the transcripts
+[2017-05-04 17:22:32.469] [jointLog] [info] processed bias for 30.0% of the transcripts
+[2017-05-04 17:22:36.388] [jointLog] [info] processed bias for 40.0% of the transcripts
+[2017-05-04 17:22:40.320] [jointLog] [info] processed bias for 50.0% of the transcripts
+[2017-05-04 17:22:44.418] [jointLog] [info] processed bias for 60.0% of the transcripts
+[2017-05-04 17:22:48.289] [jointLog] [info] processed bias for 70.0% of the transcripts
+[2017-05-04 17:22:52.374] [jointLog] [info] processed bias for 80.0% of the transcripts
+[2017-05-04 17:22:53.187] [jointLog] [info] processed bias for 100.0% of the transcripts
+[2017-05-04 17:22:54.475] [jointLog] [info] iteration = 100 | max rel diff. = 0.453514
+[2017-05-04 17:22:55.905] [jointLog] [info] iteration = 200 | max rel diff. = 0.404532
+[2017-05-04 17:22:57.337] [jointLog] [info] iteration = 300 | max rel diff. = 0.0855004
+[2017-05-04 17:22:58.770] [jointLog] [info] iteration = 400 | max rel diff. = 0.07923
+[2017-05-04 17:23:00.205] [jointLog] [info] iteration = 500 | max rel diff. = 0.0569474
+[2017-05-04 17:23:01.640] [jointLog] [info] iteration = 600 | max rel diff. = 0.027226
+[2017-05-04 17:23:03.075] [jointLog] [info] iteration = 700 | max rel diff. = 0.0435342
+[2017-05-04 17:23:04.511] [jointLog] [info] iteration = 800 | max rel diff. = 0.015116
+[2017-05-04 17:23:05.948] [jointLog] [info] iteration = 900 | max rel diff. = 0.0137435
+[2017-05-04 17:23:07.386] [jointLog] [info] iteration = 1000 | max rel diff. = 0.0106119
+[2017-05-04 17:23:08.824] [jointLog] [info] iteration = 1100 | max rel diff. = 0.0224557
+[2017-05-04 17:23:10.264] [jointLog] [info] iteration = 1200 | max rel diff. = 0.0197165
+[2017-05-04 17:23:11.705] [jointLog] [info] iteration = 1300 | max rel diff. = 0.0112696
+[2017-05-04 17:23:12.383] [jointLog] [info] iteration = 1348 | max rel diff. = 0.00996916
+[2017-05-04 17:23:12.393] [jointLog] [info] Finished optimizer
+[2017-05-04 17:23:12.393] [jointLog] [info] writing output 
+
+[2017-05-04 17:23:12.863] [jointLog] [warning] NOTE: Read Lib [( /seqdata/sandelin/projects/SKINCANCER/RNAseq/RNAPipe/00_seqdata/Sample_RNAseq_KO_02mar//Sample_RNAseq_KO_02mar_R1.fastq, /seqdata/sandelin/projects/SKINCANCER/RNAseq/RNAPipe/00_seqdata/Sample_RNAseq_KO_02mar//Sample_RNAseq_KO_02mar_R2.fastq )] :
+
+Greater than 5% of the fragments disagreed with the provided library type; check the file: Sample_RNAseq_KO_02mar/lib_format_counts.json for details
+

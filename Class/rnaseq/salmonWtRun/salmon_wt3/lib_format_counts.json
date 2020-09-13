@@ -1,0 +1,21 @@
+{
+    "read_files": "( /home/bohta/exercises/rnaseq/WT3_R1.fastq, /home/bohta/exercises/rnaseq/WT3_R2.fastq )",
+    "expected_format": "ISF",
+    "compatible_fragment_ratio": 0.8100554839717533,
+    "num_compatible_fragments": 21208415,
+    "num_assigned_fragments": 26181435,
+    "num_consistent_mappings": 44895013,
+    "num_inconsistent_mappings": 13534976,
+    "MSF": 0,
+    "OSF": 32454,
+    "ISF": 44895013,
+    "MSR": 0,
+    "OSR": 1331,
+    "ISR": 2354599,
+    "SF": 10252904,
+    "SR": 891760,
+    "MU": 0,
+    "OU": 0,
+    "IU": 0,
+    "U": 0
+}

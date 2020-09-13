@@ -1,0 +1,11 @@
+{
+    "salmon_version": "0.8.2",
+    "index": "/seqdata/sandelin/projects/SKINCANCER/RNAseq/RNAPipe/12_pseudo_alligners/salmon/rac1SalmonIndex",
+    "seqBias": [],
+    "threads": "24",
+    "libType": "ISF",
+    "output": "Sample_RNAseq_WTTPA_30mar",
+    "mates1": "/seqdata/sandelin/projects/SKINCANCER/RNAseq/RNAPipe/00_seqdata/Sample_RNAseq_WTTPA_30mar//Sample_RNAseq_WTTPA_30mar_R1.fastq",
+    "mates2": "/seqdata/sandelin/projects/SKINCANCER/RNAseq/RNAPipe/00_seqdata/Sample_RNAseq_WTTPA_30mar//Sample_RNAseq_WTTPA_30mar_R2.fastq",
+    "auxDir": "aux_info"
+}

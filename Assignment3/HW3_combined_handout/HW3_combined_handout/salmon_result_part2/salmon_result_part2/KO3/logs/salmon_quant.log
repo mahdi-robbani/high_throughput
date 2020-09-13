@@ -1,0 +1,52 @@
+[2017-05-04 17:29:28.035] [jointLog] [info] parsing read library format
+[2017-05-04 17:29:28.035] [jointLog] [info] There is 1 library.
+[2017-05-04 17:29:28.137] [jointLog] [info] Loading Quasi index
+[2017-05-04 17:29:28.140] [jointLog] [info] Loading 32-bit quasi index
+[2017-05-04 17:29:47.696] [jointLog] [info] done
+[2017-05-04 17:29:47.696] [jointLog] [info] Index contained 143335 targets
+[2017-05-04 17:35:19.121] [jointLog] [info] Computed 205825 rich equivalence classes for further processing
+[2017-05-04 17:35:19.121] [jointLog] [info] Counted 18474123 total reads in the equivalence classes 
+[2017-05-04 17:35:19.179] [jointLog] [info] Mapping rate = 32.9511%
+
+[2017-05-04 17:35:19.179] [jointLog] [info] finished quantifyLibrary()
+[2017-05-04 17:35:19.123] [fileLog] [info] 
+At end of round 0
+==================
+Observed 56065260 total fragments (56065260 in most recent round)
+
+[2017-05-04 17:35:19.303] [jointLog] [info] Starting optimizer
+[2017-05-04 17:35:19.568] [jointLog] [info] Marked 0 weighted equivalence classes as degenerate
+[2017-05-04 17:35:19.581] [jointLog] [info] iteration = 0 | max rel diff. = 84.7818
+[2017-05-04 17:35:19.719] [jointLog] [info] iteration 11, adjusting effective lengths to account for biases
+[2017-05-04 17:35:22.267] [jointLog] [info] Computed expected counts (for bias correction)
+[2017-05-04 17:35:22.268] [jointLog] [info] processed bias for 0.0% of the transcripts
+[2017-05-04 17:35:26.173] [jointLog] [info] processed bias for 10.0% of the transcripts
+[2017-05-04 17:35:30.041] [jointLog] [info] processed bias for 20.0% of the transcripts
+[2017-05-04 17:35:34.237] [jointLog] [info] processed bias for 30.0% of the transcripts
+[2017-05-04 17:35:38.235] [jointLog] [info] processed bias for 40.0% of the transcripts
+[2017-05-04 17:35:42.225] [jointLog] [info] processed bias for 50.0% of the transcripts
+[2017-05-04 17:35:46.265] [jointLog] [info] processed bias for 60.0% of the transcripts
+[2017-05-04 17:35:50.140] [jointLog] [info] processed bias for 70.0% of the transcripts
+[2017-05-04 17:35:54.052] [jointLog] [info] processed bias for 100.0% of the transcripts
+[2017-05-04 17:35:55.302] [jointLog] [info] iteration = 100 | max rel diff. = 0.369907
+[2017-05-04 17:35:56.689] [jointLog] [info] iteration = 200 | max rel diff. = 0.185688
+[2017-05-04 17:35:58.077] [jointLog] [info] iteration = 300 | max rel diff. = 0.0715477
+[2017-05-04 17:35:59.467] [jointLog] [info] iteration = 400 | max rel diff. = 0.0674225
+[2017-05-04 17:36:00.857] [jointLog] [info] iteration = 500 | max rel diff. = 0.0983639
+[2017-05-04 17:36:02.248] [jointLog] [info] iteration = 600 | max rel diff. = 0.0408998
+[2017-05-04 17:36:03.639] [jointLog] [info] iteration = 700 | max rel diff. = 0.0163111
+[2017-05-04 17:36:05.031] [jointLog] [info] iteration = 800 | max rel diff. = 0.0152832
+[2017-05-04 17:36:06.423] [jointLog] [info] iteration = 900 | max rel diff. = 0.026259
+[2017-05-04 17:36:07.815] [jointLog] [info] iteration = 1000 | max rel diff. = 0.0291907
+[2017-05-04 17:36:09.209] [jointLog] [info] iteration = 1100 | max rel diff. = 0.0259879
+[2017-05-04 17:36:10.605] [jointLog] [info] iteration = 1200 | max rel diff. = 0.0133188
+[2017-05-04 17:36:12.001] [jointLog] [info] iteration = 1300 | max rel diff. = 0.0157336
+[2017-05-04 17:36:13.398] [jointLog] [info] iteration = 1400 | max rel diff. = 0.010069
+[2017-05-04 17:36:13.426] [jointLog] [info] iteration = 1403 | max rel diff. = 0.00994687
+[2017-05-04 17:36:13.441] [jointLog] [info] Finished optimizer
+[2017-05-04 17:36:13.441] [jointLog] [info] writing output 
+
+[2017-05-04 17:36:13.934] [jointLog] [warning] NOTE: Read Lib [( /seqdata/sandelin/projects/SKINCANCER/RNAseq/RNAPipe/00_seqdata/Sample_RNAseq_KO_31okt//Sample_RNAseq_KO_31okt_R1.fastq, /seqdata/sandelin/projects/SKINCANCER/RNAseq/RNAPipe/00_seqdata/Sample_RNAseq_KO_31okt//Sample_RNAseq_KO_31okt_R2.fastq )] :
+
+Greater than 5% of the fragments disagreed with the provided library type; check the file: Sample_RNAseq_KO_31okt/lib_format_counts.json for details
+

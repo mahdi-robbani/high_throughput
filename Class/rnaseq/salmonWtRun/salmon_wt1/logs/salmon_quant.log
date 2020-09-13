@@ -1,0 +1,43 @@
+[2018-05-11 14:26:17.374] [jointLog] [info] parsing read library format
+[2018-05-11 14:26:38.331] [jointLog] [info] parsing read library format
+[2018-05-11 14:27:39.387] [jointLog] [info] parsing read library format
+[2018-05-11 14:27:39.387] [jointLog] [info] There is 1 library.
+[2018-05-11 14:27:39.544] [jointLog] [info] Loading Quasi index
+[2018-05-11 14:27:39.544] [jointLog] [info] Loading 32-bit quasi index
+[2018-05-11 14:27:50.393] [jointLog] [info] done
+[2018-05-11 14:27:50.393] [jointLog] [info] Index contained 135181 targets
+[2018-05-11 14:27:51.173] [jointLog] [info] Automatically detected most likely library type as ISF
+[2018-05-11 14:28:05.566] [jointLog] [info] Computed 125424 rich equivalence classes for further processing
+[2018-05-11 14:28:05.566] [jointLog] [info] Counted 2832449 total reads in the equivalence classes 
+[2018-05-11 14:28:05.582] [jointLog] [warning] Only 2832449 fragments were mapped, but the number of burn-in fragments was set to 5000000.
+The effective lengths have been computed using the observed mappings.
+
+[2018-05-11 14:28:05.582] [jointLog] [info] Mapping rate = 69.1589%
+
+[2018-05-11 14:28:05.582] [jointLog] [info] finished quantifyLibrary()
+[2018-05-11 14:28:05.582] [jointLog] [info] Starting optimizer
+[2018-05-11 14:28:05.566] [fileLog] [info] 
+At end of round 0
+==================
+Observed 4095565 total fragments (4095565 in most recent round)
+
+[2018-05-11 14:28:05.689] [jointLog] [info] Marked 0 weighted equivalence classes as degenerate
+[2018-05-11 14:28:05.693] [jointLog] [info] iteration = 0 | max rel diff. = 25.5126
+[2018-05-11 14:28:05.963] [jointLog] [info] iteration = 100 | max rel diff. = 0.101393
+[2018-05-11 14:28:06.272] [jointLog] [info] iteration = 200 | max rel diff. = 0.0478243
+[2018-05-11 14:28:06.582] [jointLog] [info] iteration = 300 | max rel diff. = 0.0332466
+[2018-05-11 14:28:06.893] [jointLog] [info] iteration = 400 | max rel diff. = 0.0246669
+[2018-05-11 14:28:07.177] [jointLog] [info] iteration = 500 | max rel diff. = 0.0204545
+[2018-05-11 14:28:07.477] [jointLog] [info] iteration = 600 | max rel diff. = 0.0171503
+[2018-05-11 14:28:07.782] [jointLog] [info] iteration = 700 | max rel diff. = 0.0142916
+[2018-05-11 14:28:08.089] [jointLog] [info] iteration = 800 | max rel diff. = 0.0118766
+[2018-05-11 14:28:08.400] [jointLog] [info] iteration = 900 | max rel diff. = 0.0112025
+[2018-05-11 14:28:08.712] [jointLog] [info] iteration = 1000 | max rel diff. = 0.0110675
+[2018-05-11 14:28:08.715] [jointLog] [info] iteration = 1002 | max rel diff. = 0.00991017
+[2018-05-11 14:28:08.737] [jointLog] [info] Finished optimizer
+[2018-05-11 14:28:08.737] [jointLog] [info] writing output 
+
+[2018-05-11 14:28:08.907] [jointLog] [warning] NOTE: Read Lib [( /home/bohta/exercises/rnaseq/WT1_R1.fastq, /home/bohta/exercises/rnaseq/WT1_R2.fastq )] :
+
+Greater than 5% of the fragments disagreed with the provided library type; check the file: salmon_wt1/lib_format_counts.json for details
+

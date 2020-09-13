@@ -1,0 +1,10 @@
+{
+    "salmon_version": "0.8.2",
+    "index": "/home/bohta/mm10/mm10GencodeV17salmonIndex",
+    "threads": "12",
+    "libType": "A",
+    "output": "salmon_wt1",
+    "mates1": "/home/bohta/exercises/rnaseq/WT1_R1.fastq",
+    "mates2": "/home/bohta/exercises/rnaseq/WT1_R2.fastq",
+    "auxDir": "aux_info"
+}

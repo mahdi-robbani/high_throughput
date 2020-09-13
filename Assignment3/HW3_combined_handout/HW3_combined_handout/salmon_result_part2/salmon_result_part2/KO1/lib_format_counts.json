@@ -1,0 +1,21 @@
+{
+    "read_files": "( /seqdata/sandelin/projects/SKINCANCER/RNAseq/RNAPipe/00_seqdata/Sample_RNAseq_KO_02mar//Sample_RNAseq_KO_02mar_R1.fastq, /seqdata/sandelin/projects/SKINCANCER/RNAseq/RNAPipe/00_seqdata/Sample_RNAseq_KO_02mar//Sample_RNAseq_KO_02mar_R2.fastq )",
+    "expected_format": "ISF",
+    "compatible_fragment_ratio": 0.5841268567640034,
+    "num_compatible_fragments": 9973417,
+    "num_assigned_fragments": 17074060,
+    "num_consistent_mappings": 39467080,
+    "num_inconsistent_mappings": 16699043,
+    "MSF": 0,
+    "OSF": 45025,
+    "ISF": 39467080,
+    "MSR": 0,
+    "OSR": 11676,
+    "ISR": 4779604,
+    "SF": 9710871,
+    "SR": 2150793,
+    "MU": 0,
+    "OU": 0,
+    "IU": 0,
+    "U": 0
+}

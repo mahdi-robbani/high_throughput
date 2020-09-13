@@ -1,0 +1,121 @@
+---
+title: "Clustering tutorial, without solutions"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+## I: k-means clustering
+
+Kmeans in R is fairly simple:
+```{r, eval=FALSE}
+mygroups<-kmeans( data, k) #where data is a matrix and k is the number of clusters you want
+
+```
+
+
+The output of this has several interesting things: in particular:
+
+```{r, eval=FALSE}
+mygroups$cluster # - a label for each of the rows in your matrix corresponding to 
+# what group it is assigned to (1-k)
+mygroups$centers # a summary of the center of each group
+```
+
+The cancer-samples.txt file has two columns. These are gene expression data from two genes, in a large number of cancer samples (rows). The question is how many groups that are present in the data.
+
+In this set, we have the advantage that we only have two genes, which  means we can plot them vs each other in an x-y plot. We will do this to look at the resulting clusters. But, if we have more genes, the plotting like this would be difficult, as we have too many dimensions. 
+
+First, read in the file, plot gene1 vs gene2 as a scatterplot. It is pretty obvious that there are some sort of grouping(s) in this data. Use this to suggest a couple of different numbers for 'k'. 
+
+
+
+Second, make a matrix based on the tibble you read in. Use this matrix as input to k.means(), and try to visualize the groups in the plot you have. Hint 1: try to find out what my.groups in mygroups contains. Hint 2: mygroups$cluster. Select some different 'k'
+
+
+Challenge: only if you feel you have the time. Can you remake the plot below? It shows both the cluster labels of each point and the center of ach cluster (as a grey large dot), following a k means where k=4. 
+
+Hint: each geom can have its own data=...
+
+![](kmeans.png)
+
+
+
+
+# II: Hierarchical clustering
+Use the same matrix as above, but calculate the distance between all rows using Euclidian distance, then do a hierarchical clustering and plot the tree. Look at the tree -  what is it that we are looking at? What is on Y and X, what are the leaves?
+
+Functions to look up: dist(), hclust()
+
+If you have time: Say that we want three or four groups based on the tree. The cutree() function outputs group membership for all rows, much like the clusters in k means. You can also use the rect.hclust() function to draw rectangles on the tree, corresponing to groups. 
+Use the cutree() function for this. Are these the same groups as corresponding k-means clustering?   Hint: table(). 
+
+
+
+
+
+
+# III Heatmaps
+Let us first make a very simple heatmap based on the cancer data above. This will not utilize the full power of heatmaps since we only have two genes.
+Install the 'pheatmap'  package and try this:
+
+```{r, eval=FALSE}
+library(pheatmap)
+
+#base heatap
+pheatmap(cancer.data.m)
+
+# base heatmap with different color scales
+pheatmap(cancer.data.m,  color=rainbow(100)) # horrible
+
+library(viridis) # requires installation of viridis package
+pheatmap(cancer.data.m,  color=magma(10)) # quite nice
+
+
+# heatmap is split by using cutree on the row tree (k=4)
+pheatmap(cancer.data.m, cutree_rows = 4)
+
+# comparing this splitup with the 
+#k means groups that we made before
+# some necessary ground work here - 
+#1) making a data frme for "annotation":
+#in this case k means groups
+temp<-data.frame(kmeans=my.groups$cluster)
+
+# 2) the matrix neeeds row names so that it 
+#can be matched with the data frame above. 
+row.names(cancer.data.m)<-1:94
+
+# and drawing the heat map
+pheatmap(cancer.data.m, cutree_rows = 4, 
+         annotation_row=temp)
+
+# the idea of using extra rows and 
+#columns like this to show other 
+# data and how it is "explained" 
+#by the clustering is very nice. 
+# We typically think of these data as "co-variates"
+
+```
+
+What is it that we see? Are the same groups as we saw in the plots in a) and b) visible?
+
+
+
+
+
+The real power of heatmaps is to visualize data with many columns and rows at once. To do this, we need more genes than in our cancer example. 
+
+The more_patients.txt file has exactly this: rows are genes, columns are patients being exposed to a drug.  The first column show gene names, which should not be part of the actual  heatmap data - but it should be used as row labels in the matrix so that they get uased as labels in the reulting heatmap.  We are told that some of the patients seem to be responding to the drug. 
+
+What patients are these and what genes are these? Are most of those gene down-or up-regulated? 
+
+
+If you have time (this is a bit harder): In the file annotation.txt, there is annotation category for each of the genes (gene names in col 1, annotation category in col2).  Can you use the annotation categories as an extra columns in the heatmap (like we did for k means in the small heat map above) to make the data even more understandable? Tip: pheatmap annotation_row wants a data frame, it cannot deal with tibbles. 
+
+

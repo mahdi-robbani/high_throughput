@@ -1,0 +1,37 @@
+---
+title: "My R Notebook"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+# this part here is the setup code. Here we can load libraries etc etc. 
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse) #because, we will always use it
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>. Feel free to try to edit any of the text or code below. The green triangle in code can be used to test code (always a good plan). You can add new R code "chunks" by using the "insert" button above, or just copy text as it is done  below. 
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r mpg}
+mpg
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+ggplot(data = mpg) + geom_point(mapping = aes(x = cty, y = hwy, col=displ ))+theme_bw()
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.For homeworks etc, this is a bad idea, we always want to see the code. 
+
+### Including external images
+Useful for home works.  
+![]()
+

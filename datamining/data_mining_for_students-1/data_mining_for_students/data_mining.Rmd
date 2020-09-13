@@ -1,0 +1,196 @@
+---
+title: "Data mining exercise"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+#Introduction
+
+Your collaborator has made a  CAGE experiment using 7 different tissues. As a remainder, CAGE tags are 20-21 nt long tags mapping to the genome. We often cluster CAGE tags that are close to one another on the genome to a “tag cluster”. A tag cluster can then have several tags from one or several tissues. 
+
+One can view these CAGE tag clusters as being “core promoters” in the sense that they are measuring the activity and location of a core promoter.
+
+The data file `htbinf_cage_tpms` shows the CAGE tag clusters as rows, and tissues as columns. The cell values are the TPMs from the given tissue in the cluster.  There are three additional columns: the tag cluster ID, the location of the cluster in mm8 and the strand of the cluster. 
+The collaborator now wants to know:
+
+__1. How many types of  core promoters are there in terms of tissue expression patterns, and what expression patterns are these? __
+
+There are 4 types because we have 4 plots
+
+```{r}
+library(tidyverse)
+library(viridis)
+cage_data <- read_tsv("htbinf_cage_tpms.txt")
+cage_data
+```
+
+```{r}
+cage_pca <- prcomp(cage_data[c(-1:-3)])
+cage_pca$x %>%
+  as.data.frame() %>%
+  ggplot(aes(x=PC1, y=PC2)) + geom_point()
+```
+
+```{r}
+cage_data[c(-1:-3)] %>%
+dist(.) %>%
+hclust(.)%>%
+plot(.)
+```
+
+```{r}
+cage_kmeans <- kmeans(cage_data[c(-1:-3)], 3)
+cage_data$clusters <- cage_kmeans$cluster
+cage_data
+  
+```
+
+```{r}
+summary(cage_pca)
+```
+
+
+
+```{r}
+cage_pca$x %>%
+  as.data.frame() %>%
+  mutate(clusters = as.factor(cage_kmeans$cluster)) %>%
+  ggplot(aes(x=PC1, y=PC2, col=clusters)) + geom_point()
+```
+
+```{r}
+library(pheatmap)
+pheatmap(cage_data[c(-1:-3, -11)])
+```
+
+
+
+__2. What tissues are similar to each other in terms of promoter usage? They would really like to have this as a picture and not just  "values"__
+
+```{r}
+library(pheatmap)
+pheatmap(cage_data[c(-1:-3)], color = magma(10))
+```
+
+
+__3.  How many tissue-specific promoters are there, per tissue and just allover? It would be very helpful to calculate two "specificity scores": one for each tissue, and one summary score across all tissues for each promoter. __ 
+
+```{r}
+cage_data <- read_tsv("htbinf_cage_tpms.txt")
+cage_data_numeric <- cage_data[4:10]
+rowwise_median <- apply(cage_data_numeric, 1, function(x) median(x))
+cage_diff <- cage_data_numeric - rowwise_median
+cage_diff_bool <- cage_diff > 20
+cage_diff_bool %>%
+  as.data.frame() %>%
+  mutate(Sum = apply(cage_diff_bool, 1, sum)) -> cage_diff_bool_sum
+cage_diff$Sum <- cage_diff_bool_sum$Sum
+cage_diff$tc_id <- cage_data$tc_id
+cage_diff %>%
+  mutate(Var = apply(cage_diff[c(-8,-9)], 1, function(x) var(x))) %>%
+  filter(Sum == 1) %>%
+  filter(cer == max(cer) | emb == max(emb) | liv == max(liv) | lun == max(lun) | mac == max(mac) | mac == max(mac) | som == max(som) | vis == max(vis)) %>%
+  arrange(desc(Var))
+```
+
+```{r}
+cage_data %>%
+  filter(tc_id == "C1F14437FA" | tc_id == "C7F861C25B")
+```
+
+
+```{r, eval = F}
+rowwise_mean <- apply(cage_data[c(-1:-3, -11)], 1, function(x) mean(x))
+rowwise_median <- apply(cage_data[c(-1:-3, -11)], 1, function(x) median(x))
+rowwise_var <- apply(cage_data[c(-1:-3, -11)], 1, function(x) var(x))
+rowwise_min <- apply(cage_data[c(-1:-3, -11)], 1, function(x) min(x) +0.001)
+cage_diff <- cage_data[c(-1:-3, -11)]-rowwise_median
+cage_diff %>%
+  mutate(Var = apply(cage_mean_diff, 1, function(x) var(x))) %>%
+  mutate("tc_id" = cage_data$tc_id) %>%
+  arrange(desc(Var)) -> cage_diff_var
+cage_diff_numeric <- cage_diff_var[1:7]
+cage_diff_numeric
+threshold <- 20
+cage_diff_boolean <- cage_diff > threshold #quantile(as.matrix(cage_numeric), 0.95)
+cage_diff_boolean %>%
+  as.data.frame() %>%
+  mutate("tc_id" = cage_data$tc_id) %>%
+  mutate(Sum = apply(cage_boolean, 1, sum)) %>%
+  arrange(desc(Sum)) %>% #-> cage_diff_boolean_sum #some
+  filter(Sum == 1)-> cage_diff_boolean_filtered
+  #filter(Sum == 1) #-> filtered_cage_boolean
+#filtered_cage_boolean <- filtered_cage_boolean[1:7]
+sapply(cage_diff_boolean_filtered[1:7], sum)
+sapply(cage_diff_boolean_sum[1:7], sum)
+```
+
+```{r, eval = F}
+threshold <- 20
+cage_diff_var %>%
+  filter(tc_id %in% cage_diff_boolean_filtered$tc_id) %>%
+  gather("Tissue", "ExpDev", -Var, -tc_id) %>%
+  group_by(Tissue) %>%
+  summarize(Max = max(ExpDev))
+  #mutate(TisSpec = ExpDev > threshold) #%>%
+  #group_by(Tissue) %>%
+  #summarize(Max = max(ExpDev), sum(TisSpec))
+```
+
+
+
+>Pick a cutoff for variance, high variance rows are uniquely expressed in some tissues (e.g. 100)
+Pick a cutoff for the expression level (e.g 20) and then calculate a boolean matrix depending on this
+Count the booleans
+
+
+
+```{r, eval =F}
+cage_data[c(-2:-3, -11)] %>%
+  #rowwise() %>%
+  #mutate(Quantile = apply(cage_data[c(-1:-3, -11)], 1, function (x) quantile(x, 0.95))) -> cage_mean
+  mutate(Quantile = apply(cage_data[c(-1:-3, -11)], 1, function (x) quantile(x, 0.95))) -> cage_mean
+  
+  #as.data.frame() %>%
+  #filter_if(is.numeric, any_vars(. >25))
+  
+
+cage_numeric <- cage_data[c(-1:-3, -11)]
+cage_boolean <- cage_numeric > quantile(as.matrix(cage_numeric), 0.95)
+cage_boolean %>%
+  as.data.frame() %>%
+  mutate("tc_id" = cage_data$tc_id) %>%
+  mutate(Sum = apply(cage_boolean, 1, sum)) %>%
+  filter(Sum == 1) -> filtered_cage_boolean
+filtered_cage_boolean <- filtered_cage_boolean[1:7]
+sapply(filtered_cage_boolean, sum)
+```
+
+```{r, eval =F}
+sapply(filtered_cage_boolean, sum)
+#t.test(cage_numeric[1], cage_numeric[2])
+```
+
+
+
+__4. They want to have  genome browser examples of the most tissue-specific promoter for each tissue__
+
+```{r, eval=F}
+cage_diff_var %>%
+  filter(tc_id %in% cage_diff_boolean_filtered$tc_id)
+  #group_by(Tissue) %>%
+  #summarize(Max = max(ExpressionDeviation))
+```
+
+
+
+__5 Lastly, they want a list with the 10 most tissue-specific promoters, taking all tissues into account.__
+```{r, eval =F}
+pheatmap(cage_data[c(-1:-3)], color = rainbow(10))
+
+```
+
+
+

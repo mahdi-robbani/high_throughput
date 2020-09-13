@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1590742628521.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3512275646",
+    "id" : "86369A2C",
+    "lastKnownWriteTime" : 1590748128,
+    "last_content_update" : 1590748128857,
+    "path" : "C:/Users/mahdi/OneDrive - Københavns Universitet/High Throughput Analysis/high_throughput/Class/deseq.R",
+    "project_path" : "Class/deseq.R",
+    "properties" : {
+        "cursorPosition" : "64,38",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

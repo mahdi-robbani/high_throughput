@@ -1,0 +1,53 @@
+[2017-05-04 17:56:37.343] [jointLog] [info] parsing read library format
+[2017-05-04 17:56:37.343] [jointLog] [info] There is 1 library.
+[2017-05-04 17:56:37.441] [jointLog] [info] Loading Quasi index
+[2017-05-04 17:56:37.442] [jointLog] [info] Loading 32-bit quasi index
+[2017-05-04 17:56:51.459] [jointLog] [info] done
+[2017-05-04 17:56:51.459] [jointLog] [info] Index contained 143335 targets
+[2017-05-04 18:01:16.870] [fileLog] [info] 
+At end of round 0
+==================
+Observed 45626717 total fragments (45626717 in most recent round)
+
+[2017-05-04 18:01:16.869] [jointLog] [info] Computed 230772 rich equivalence classes for further processing
+[2017-05-04 18:01:16.869] [jointLog] [info] Counted 27812554 total reads in the equivalence classes 
+[2017-05-04 18:01:16.938] [jointLog] [info] Mapping rate = 60.9567%
+
+[2017-05-04 18:01:16.938] [jointLog] [info] finished quantifyLibrary()
+[2017-05-04 18:01:17.015] [jointLog] [info] Starting optimizer
+[2017-05-04 18:01:17.200] [jointLog] [info] Marked 0 weighted equivalence classes as degenerate
+[2017-05-04 18:01:17.215] [jointLog] [info] iteration = 0 | max rel diff. = 81.1427
+[2017-05-04 18:01:17.373] [jointLog] [info] iteration 11, adjusting effective lengths to account for biases
+[2017-05-04 18:01:19.927] [jointLog] [info] Computed expected counts (for bias correction)
+[2017-05-04 18:01:19.928] [jointLog] [info] processed bias for 0.0% of the transcripts
+[2017-05-04 18:01:24.194] [jointLog] [info] processed bias for 10.0% of the transcripts
+[2017-05-04 18:01:28.355] [jointLog] [info] processed bias for 20.0% of the transcripts
+[2017-05-04 18:01:32.869] [jointLog] [info] processed bias for 30.0% of the transcripts
+[2017-05-04 18:01:37.226] [jointLog] [info] processed bias for 40.0% of the transcripts
+[2017-05-04 18:01:41.635] [jointLog] [info] processed bias for 50.0% of the transcripts
+[2017-05-04 18:01:46.243] [jointLog] [info] processed bias for 60.0% of the transcripts
+[2017-05-04 18:01:50.832] [jointLog] [info] processed bias for 70.0% of the transcripts
+[2017-05-04 18:01:55.504] [jointLog] [info] processed bias for 80.0% of the transcripts
+[2017-05-04 18:01:58.103] [jointLog] [info] processed bias for 100.0% of the transcripts
+[2017-05-04 18:01:59.563] [jointLog] [info] iteration = 100 | max rel diff. = 0.553883
+[2017-05-04 18:02:01.158] [jointLog] [info] iteration = 200 | max rel diff. = 0.133718
+[2017-05-04 18:02:02.758] [jointLog] [info] iteration = 300 | max rel diff. = 0.0635015
+[2017-05-04 18:02:04.359] [jointLog] [info] iteration = 400 | max rel diff. = 0.0515934
+[2017-05-04 18:02:05.961] [jointLog] [info] iteration = 500 | max rel diff. = 0.0251079
+[2017-05-04 18:02:07.563] [jointLog] [info] iteration = 600 | max rel diff. = 0.0392242
+[2017-05-04 18:02:09.164] [jointLog] [info] iteration = 700 | max rel diff. = 0.0235434
+[2017-05-04 18:02:10.764] [jointLog] [info] iteration = 800 | max rel diff. = 0.0403098
+[2017-05-04 18:02:12.366] [jointLog] [info] iteration = 900 | max rel diff. = 0.0144928
+[2017-05-04 18:02:13.967] [jointLog] [info] iteration = 1000 | max rel diff. = 0.0130035
+[2017-05-04 18:02:15.570] [jointLog] [info] iteration = 1100 | max rel diff. = 0.0181795
+[2017-05-04 18:02:17.174] [jointLog] [info] iteration = 1200 | max rel diff. = 0.0165777
+[2017-05-04 18:02:18.778] [jointLog] [info] iteration = 1300 | max rel diff. = 0.0210191
+[2017-05-04 18:02:20.383] [jointLog] [info] iteration = 1400 | max rel diff. = 0.0101018
+[2017-05-04 18:02:20.416] [jointLog] [info] iteration = 1403 | max rel diff. = 0.00994676
+[2017-05-04 18:02:20.429] [jointLog] [info] Finished optimizer
+[2017-05-04 18:02:20.429] [jointLog] [info] writing output 
+
+[2017-05-04 18:02:20.933] [jointLog] [warning] NOTE: Read Lib [( /seqdata/sandelin/projects/SKINCANCER/RNAseq/RNAPipe/00_seqdata/Sample_RNAseq_WT_04okt//RNAseq_WT_04okt_GGACCC_L005_R1.fastq, /seqdata/sandelin/projects/SKINCANCER/RNAseq/RNAPipe/00_seqdata/Sample_RNAseq_WT_04okt//RNAseq_WT_04okt_GGACCC_L005_R2.fastq )] :
+
+Greater than 5% of the fragments disagreed with the provided library type; check the file: Sample_RNAseq_WT_04okt/lib_format_counts.json for details
+
